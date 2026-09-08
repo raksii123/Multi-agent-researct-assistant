@@ -1,5 +1,9 @@
-from agents import build_reader_aggent, build_search_agent, writer_prompt, critic_chain
-
+from agents import (
+    build_reader_aggent,
+    build_search_agent,
+    writer_prompt,
+    critic_chain
+)
 def run_research_pipeline(topic : str) -> dict:
     state = {}
 

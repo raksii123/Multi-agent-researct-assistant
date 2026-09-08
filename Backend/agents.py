@@ -10,7 +10,11 @@ from tools import wed_search, scrape_url
 import os
 
 # model setup
-llm = ChatMistralAI(model = "mistral-small-2603", temperature=0)
+llm = ChatMistralAI(
+    model="mistral-small-2603",
+    temperature=0,
+    max_tokens=100
+)
 
 
 #  1st agent 
@@ -24,11 +28,10 @@ def build_search_agent():
 # 2nd agent
 
 def build_reader_aggent():
-    create_agent(
+    return create_agent(
         model=llm,
-        tools= [scrape_url]
+        tools=[scrape_url]
     )
-
 
 # writer chain
 
